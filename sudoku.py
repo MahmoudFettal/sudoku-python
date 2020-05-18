@@ -46,14 +46,14 @@ def solution(G):
                     G[i][j] = possib[0]
         if switchs == 0:
             break
-def solve(G,n=0):
+def solve(G):
     for i in range(9):
         for j in range(9):
             if G[i][j] == 0:
                 for k in range(1,10):
                     if k in possibles(G,i,j):
                         G[i][j] = k
-                        solve(G,n)
+                        solve(G)
                         G[i][j] = 0
                 return
 
